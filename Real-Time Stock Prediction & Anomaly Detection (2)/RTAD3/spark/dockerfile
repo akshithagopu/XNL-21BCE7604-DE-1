@@ -1,0 +1,21 @@
+FROM bitnami/spark:latest
+
+# Install system dependencies
+RUN python -m pip install --upgrade pip
+
+# Install Python dependencies
+RUN pip install \
+    kafka-python \
+    yfinance \
+    psycopg2-binary \
+    numpy \
+    pandas \
+    tensorflow-cpu \
+    scikit-learn \
+    plotly \
+    transformers \
+    torch   \
+    py4j    \
+    sqlalchemy
+# Set working directory
+WORKDIR /app
